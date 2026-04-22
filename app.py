@@ -107,6 +107,13 @@ if archivo is not None:
         )
 
         st.plotly_chart(fig, use_container_width=True)
+        st.subheader("📌 Reporte de Convergencia")
+
+        st.markdown(f"""
+        El algoritmo K-Means se ejecutó con **K = {k}**, donde los centroides fueron inicializados con *k-means++*. 
+        Durante las iteraciones, los centroides se ajustaron progresivamente al reasignar los datos hasta estabilizarse. 
+        La convergencia se alcanzó en **{kmeans.n_iter_} iteraciones**, cuando las asignaciones dejaron de cambiar.
+        """)
 
         # 🔹 Selector cluster
         st.subheader(" Análisis por Cluster")
